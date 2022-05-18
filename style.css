@@ -46,9 +46,9 @@ body{
   margin-bottom: 10px;
   display: none;
 }
-.form form .name-details{
+/* .form form .name-details{
   display: flex;
-}
+} */
 .form .name-details .field:first-child{
   margin-right: 10px;
 }
