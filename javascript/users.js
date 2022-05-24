@@ -6,9 +6,16 @@ searchBtn.onclick = () => {
     searchBar.classList.toggle("active");
     searchBar.focus();
     searchBtn.classList.toggle("active");
+    searchBar.value = "";
 }
 
 searchBar.onkeyup = () => {
+    let searchTerm = searchBar.value;
+    if(searchTerm != ""){
+        searchBar.classList.add("active");
+    } else{
+        searchBar.classList.remove("active");
+    }
     //lets start AJAX
     let xhr = new XMLHttpRequest();  //Creating XML object
     xhr.open("POST", "php/search.php");
@@ -16,7 +23,7 @@ searchBar.onkeyup = () => {
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
                 let data = xhr.response;
-                console.log(data);
+                usersList.innerHTML = data;
                
             }
         }
@@ -33,7 +40,9 @@ setInterval(() =>{
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
                 let data = xhr.response;
-                usersList.innerHTML = data;
+                if (!searchBar.classList.contains("active")){   //if the search is not on the searchBar add the data
+                    usersList.innerHTML = data;
+                }
                
             }
         }
