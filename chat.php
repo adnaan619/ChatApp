@@ -37,8 +37,10 @@
                     </div>
                 </div>
             </div>
-            <form action="#" class="typing-area">
-                <input type="text" class="input-field" placeholder="Type a message here...">
+            <form action="#" class="typing-area" autocomplete="off">
+                <input type="text" name="outgoing_id" value="<?php echo $_SESSION['unique_id']; ?>" hidden>   
+                <input type="text" name="incoming_id" value="<?php echo $user_id; ?>"> 
+                <input type="text" name="message" class="input-field" placeholder="Type a message here...">
                 <button><i class="fab fa-telegram-plane"></i></button>
             </form>
         </section>
