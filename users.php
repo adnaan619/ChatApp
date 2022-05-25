@@ -21,10 +21,9 @@
                     <div class="details">
                         <span><?php echo $row['fname'] . " " . $row['img'] ?></span>
                         <p><?php echo $row['status'] ?></p>
-                        <p>Active now</p>
                     </div>
                 </div>
-                <a href="#" class="logout">Logout</a>
+                <a href="php/logout.php?logout_id=<?php echo $row['unique_id'] ?>" class="logout">Logout</a>
             </header>
             <div class="search">
                 <span class="search">Select a user to start chat...</span>
