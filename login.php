@@ -1,11 +1,34 @@
 <?php
-    session_start();
-    if(isset($_SESSION['unique_id'])){  //if user is logged in
-        header("location: users.php");
-    }
+    // session_start();
+    // if(isset($_SESSION['unique_id'])){  //if user is logged in
+    //     header("location: users.php");
+    // }
 ?>
-<?php include_once "header.php"; ?>
-<body>
+<?php include_once "php/header.php"; ?>
+
+
+<?php
+
+
+
+
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+
+
+
+
+?>
+<!-- <body>
     <div class="wrapper">
         <section class="form login">
             <header>RealTime Chat App</header>
@@ -30,5 +53,5 @@
     
     <script src="javascript/pass-show-hide.js"></script>
     <script src="javascript/login.js"></script>
-</body>
+</body> -->
 </html>
